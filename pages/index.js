@@ -14,6 +14,15 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <h2>Public Environment Variables</h2>
+        <pre>
+          {JSON.stringify({
+            public: process.env.NEXT_PUBLIC_URI,
+            branch: process.env.NEXT_PUBLIC_BRANCH || null,
+            secret: process.env.SECRET || null
+          }, null, 2)}
+        </pre>
+
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
